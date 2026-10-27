@@ -1,0 +1,640 @@
+
+/* ===== CITY FOR EVERYONE: POLISHED THEME ===== */
+
+:root {
+  --forest: #245b43;
+  --forest-dark: #183e30;
+  --leaf: #70a77b;
+  --mint: #e7f4e7;
+  --cream: #f7f8f2;
+  --ink: #20352a;
+  --muted: #77877a;
+  --border: #e2eadd;
+  --shadow: 0 12px 36px rgba(34, 75, 49, 0.07);
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 5% 0%, #e7f2df 0%, transparent 35%),
+    radial-gradient(ellipse at 100% 30%, #e7f2ec 0%, transparent 30%),
+    var(--cream);
+}
+
+.app {
+  max-width: 1240px;
+  padding: 38px 28px;
+}
+
+.game-header {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  margin-bottom: 25px;
+  background: linear-gradient(120deg, #ffffff 15%, #eef6e9 100%);
+  border: 1px solid rgba(220, 233, 215, 0.9);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.game-header::after {
+  content: "🌿";
+  position: absolute;
+  right: 190px;
+  bottom: -34px;
+  font-size: 110px;
+  opacity: 0.09;
+  transform: rotate(-20deg);
+  pointer-events: none;
+}
+
+.game-header h1 {
+  color: var(--forest-dark);
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -1.8px;
+}
+
+.eyebrow {
+  color: #578465;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  color: #728174;
+  font-size: 14px;
+}
+
+.reset-button {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px #244f3718;
+}
+
+.stats-grid {
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  background: linear-gradient(145deg, #fff 55%, #f3f8ef);
+  border: 1px solid #e4ecdf;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(37, 76, 48, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  background: var(--mint);
+  border-radius: 15px;
+}
+
+.stat-card h2 {
+  color: var(--forest);
+  font-size: 28px;
+  letter-spacing: -0.8px;
+}
+
+.game-layout {
+  gap: 22px;
+}
+
+.map-panel,
+.mission-panel,
+.upgrade-summary {
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(224, 234, 220, 0.95);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+.panel-heading {
+  margin-bottom: 22px;
+}
+
+.panel-heading h2 {
+  color: var(--forest-dark);
+  font-size: 21px;
+  letter-spacing: -0.7px;
+}
+
+.map-status {
+  padding: 8px 11px;
+  background: #edf7ec;
+  border: 1px solid #dfeddb;
+  border-radius: 30px;
+  color: #477451;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.map-container {
+  padding: 6px;
+  background: linear-gradient(145deg, #e8f2e2, #f5f8ed);
+  border: 1px solid #dce9d5;
+  border-radius: 18px;
+  box-shadow: inset 0 2px 8px rgba(48, 90, 52, 0.04);
+}
+
+.map-container svg {
+  border-radius: 12px;
+}
+
+.movement-help {
+  margin: 17px 0;
+  gap: 8px;
+}
+
+.keyboard-key {
+  box-shadow: 0 2px 0 #d8e3d4;
+  font-size: 11px;
+}
+
+.primary-button {
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #397b52, #24583e);
+  border: 1px solid #2f6a47;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(39, 95, 60, 0.13);
+  font-size: 13px;
+  letter-spacing: 0.1px;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45885d, #2b6647);
+  box-shadow: 0 8px 18px rgba(39, 95, 60, 0.2);
+  transform: translateY(-2px);
+}
+
+.message-box {
+  padding: 15px;
+  background: linear-gradient(120deg, #eff7ed, #f7f9f2);
+  border: 1px solid #e4eddf;
+  border-radius: 13px;
+}
+
+.resident-card {
+  padding: 17px;
+  background: linear-gradient(120deg, #edf6e9, #f7f9f3);
+  border: 1px solid #e3ecdd;
+  border-radius: 16px;
+}
+
+.resident-avatar {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(145deg, #dcefd7, #eef6e8);
+  border: 1px solid #d4e7ce;
+  border-radius: 15px;
+}
+
+.resident-card h3 {
+  color: var(--forest-dark);
+  font-size: 17px;
+}
+
+.mission-description {
+  padding: 2px 1px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.barrier-section {
+  padding: 16px;
+  background: #fbfcf9;
+  border: 1px solid #edf0e8;
+  border-radius: 14px;
+}
+
+.barrier-section h3 {
+  margin-bottom: 8px;
+  color: var(--forest-dark);
+}
+
+.barrier-item {
+  gap: 9px;
+  padding: 13px 0;
+}
+
+.barrier-fixed {
+  color: #478253;
+}
+
+.barrier-status {
+  padding: 5px 8px;
+  background: #f0f2eb;
+  border-radius: 7px;
+  font-size: 10px;
+}
+
+.progress-track {
+  height: 9px;
+  background: #eaf0e6;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #83bb81, #36744d);
+  box-shadow: 0 0 8px rgba(92, 157, 98, 0.15);
+}
+
+.upgrade-summary {
+  margin-top: 22px;
+}
+
+.purchased-chip {
+  padding: 10px 14px;
+  border: 1px solid #dcebd6;
+  border-radius: 10px;
+  font-weight: 550;
+}
+
+.secondary-button {
+  border-radius: 11px;
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover {
+  border-color: #c5d9c0;
+  transform: translateY(-1px);
+}
+
+.modal-backdrop {
+  background: rgba(20, 40, 28, 0.58);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: fade-in 0.18s ease;
+}
+
+.upgrade-modal {
+  padding: 28px;
+  border: 1px solid #e5eddf;
+  border-radius: 23px;
+  box-shadow: 0 28px 90px rgba(15, 35, 22, 0.24);
+  animation: modal-enter 0.24s ease;
+}
+
+.upgrade-card {
+  padding: 17px;
+  background: linear-gradient(120deg, #fff, #fbfcf8);
+  border: 1px solid #e6ecdf;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.upgrade-card:hover {
+  border-color: #c8ddc1;
+  background: #f8fbf5;
+  transform: translateY(-2px);
+}
+
+.upgrade-info h3 {
+  color: var(--forest-dark);
+  font-size: 14px;
+}
+
+.upgrade-cost {
+  display: inline-block;
+  padding: 5px 8px;
+  background: #edf5e8;
+  border-radius: 7px;
+}
+
+.buy-button {
+  color: white;
+  background: linear-gradient(135deg, #397b52, #24583e);
+  border-radius: 9px;
+  transition: all 0.2s ease;
+}
+
+.buy-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.purchased-button {
+  background: #e6f2e3;
+  border: 1px solid #d6e8d0;
+  border-radius: 9px;
+}
+
+.close-button {
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+.close-button:hover {
+  background: #e2ecdd;
+}
+
+.shop-footer {
+  color: var(--forest);
+}
+
+.victory-banner {
+  padding: 35px 24px;
+  background:
+    radial-gradient(circle at 50% 0%, #fafff5, transparent 65%),
+    linear-gradient(135deg, #e6f4e1, #f5f9ed);
+  border: 1px solid #d1e7c8;
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  animation: modal-enter 0.35s ease;
+}
+
+.victory-banner h2 {
+  color: var(--forest-dark);
+  font-size: 27px;
+}
+
+.victory-icon {
+  filter: drop-shadow(0 4px 7px rgba(79, 119, 57, 0.12));
+}
+
+.all-done {
+  padding: 28px 12px;
+  background: linear-gradient(145deg, #f5f9f0, #fff);
+  border-radius: 16px;
+}
+
+.game-footer {
+  padding-top: 30px;
+  letter-spacing: 0.2px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .app {
+    padding: 18px 14px;
+  }
+
+  .game-header {
+    padding: 22px;
+    border-radius: 19px;
+  }
+
+  .game-header::after {
+    right: 15px;
+    font-size: 70px;
+  }
+
+  .map-panel,
+  .mission-panel,
+  .upgrade-summary {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .upgrade-modal {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}
+
+
+/* ===== Colorful City Game Background ===== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(167, 243, 208, 0.65),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(147, 197, 253, 0.55),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 80% 90%,
+      rgba(196, 181, 253, 0.4),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #f0fdf4, #eff6ff 55%, #f5f3ff);
+
+  background-attachment: fixed;
+  font-family: inherit;
+}
+
+/* Main game background */
+#root {
+  min-height: 100vh;
+}
+
+/* Colorful header */
+.game-header {
+  background: linear-gradient(120deg, #14532d, #15803d, #0f766e);
+  color: white;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(22, 101, 52, 0.2);
+}
+
+/* Stats cards */
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, #ecfdf5);
+  border: 1px solid rgba(134, 239, 172, 0.65);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Main panels */
+.map-panel {
+  background: linear-gradient(145deg, #ffffff, #f0fdf4);
+  border: 1px solid #d1fae5;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+.mission-panel {
+  background: linear-gradient(145deg, #ffffff, #eff6ff);
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+/* Upgrade summary */
+.upgrade-summary {
+  background: linear-gradient(135deg, #ecfdf5, #dbeafe);
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+}
+
+/* Smooth hover effects */
+.stat-card,
+.map-panel,
+.mission-panel {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover,
+.map-panel:hover,
+.mission-panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.1);
+}
+
+
+/* ===== VIBRANT CITY GAME THEME ===== */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 5% 10%, #ffc4e1 0%, transparent 28%),
+    radial-gradient(ellipse at 95% 12%, #a5e9ff 0%, transparent 30%),
+    radial-gradient(ellipse at 85% 85%, #d9c2ff 0%, transparent 30%),
+    radial-gradient(ellipse at 15% 90%, #b7f7d4 0%, transparent 30%),
+    linear-gradient(135deg, #fff1f7, #effaff, #f4edff);
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Colorful header */
+.game-header {
+  background: linear-gradient(120deg, #7c3aed, #ec4899, #f97316);
+  color: white;
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px #a855f744;
+}
+
+/* Bright stat cards */
+.stat-card {
+  background: linear-gradient(145deg, #ffffff, #fff0f7);
+  border: 2px solid #fbcfe8;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px #ec489922;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(145deg, #ffffff, #e0f2fe);
+  border-color: #bae6fd;
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(145deg, #ffffff, #dcfce7);
+  border-color: #bbf7d0;
+}
+
+.stat-card:nth-child(4) {
+  background: linear-gradient(145deg, #ffffff, #fef3c7);
+  border-color: #fde68a;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px #8b5cf633;
+}
+
+/* Main game panels */
+.map-panel {
+  background: linear-gradient(145deg, #ffffff, #e0f2fe);
+  border: 2px solid #bae6fd;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px #0ea5e922;
+}
+
+.mission-panel {
+  background: linear-gradient(145deg, #ffffff, #fce7f3);
+  border: 2px solid #fbcfe8;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px #ec489922;
+}
+
+/* Upgrade section */
+.upgrade-summary {
+  background: linear-gradient(120deg, #d1fae5, #dbeafe, #f3e8ff);
+  border: 2px solid #a7f3d0;
+  border-radius: 18px;
+}
+
+/* Buttons */
+button {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.07);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Colorful headings */
+h1 {
+  background: linear-gradient(90deg, #7c3aed, #db2777, #ea580c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.game-header h1 {
+  background: none;
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+/* Friendly rounded look */
+.map-panel,
+.mission-panel,
+.stat-card {
+  overflow: hidden;
+}
+
+/* Smooth background appearance */
+html {
+  scroll-behavior: smooth;
+}
